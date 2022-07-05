@@ -54,6 +54,7 @@ public class WebSettingsHostApiImpl implements WebSettingsHostApi {
   @Override
   public void create(Long instanceId, Long webViewInstanceId) {
     final WebView webView = (WebView) instanceManager.getInstance(webViewInstanceId);
+    webView.setHorizontalScrollBarEnabled(false);
     instanceManager.addInstance(webSettingsCreator.createWebSettings(webView), instanceId);
   }
 
